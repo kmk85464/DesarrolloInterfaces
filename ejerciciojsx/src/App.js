@@ -1,23 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Saludo from  './Saludos.js';
+import Despedida from  './Despedida.js';
 function App() {
+
+  const nombreUsuario = "Roberto"; // Nombre del usuario
+  const mostrarSaludo = false; // Constante que controla el mensaje a mostrar
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    {mostrarSaludo ? <Saludo nombre={nombreUsuario} /> : <Despedida nombre={nombreUsuario} />}
     </div>
   );
 }
